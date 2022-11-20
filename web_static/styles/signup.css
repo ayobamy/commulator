@@ -25,22 +25,16 @@ html {
     border-radius: 3rem;
     box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
     position: relative;
-    overflow: hidden;
 }
 
 .banner {
     position: absolute;
     top: 25%;
-    left: -30rem;
+    left: 5rem;
     text-align: center;
     color: white;
     width: 30rem;
     z-index: 2;
-    transition: left 0.8s ;
-}
-
-.container.change .banner {
-    left: 5rem;
 }
 
 .banner h1 {
@@ -53,18 +47,12 @@ html {
 }
 
 .bkg {
-    width: 100%;
+    width: 40%;
     height: 100%;
     background: linear-gradient(to right, #3ab19b, #4cbf91);
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
-    transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.container.change .bkg {
-    width: 40%;
 }
 
 .bkg button {
@@ -88,17 +76,12 @@ html {
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 40rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 10rem 0;
-    transition: left 1.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.container.change .signup {
-    left: 40rem;
 }
 
 .signup h1 {
