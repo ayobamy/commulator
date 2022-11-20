@@ -49,7 +49,7 @@ html {
 .bkg {
     width: 40%;
     height: 100%;
-    background: linear-gradient(to right, #3ab19b, #4cbf91);
+    background: linear-gradient(to right, #392e9e, #4c54bf);
     position: absolute;
     top: 0;
     left: 0;
@@ -86,7 +86,7 @@ html {
 
 .signup h1 {
     font-size: 4rem;
-    color: #3aaf9f;
+    color: #392e9e;
 }
 
 .socials {
@@ -137,7 +137,7 @@ html {
 .signup button {
     width: 16rem;
     height: 5rem;
-    background-color: #3aaf9f;
+    background-color: #392e9e;
     border: none;
     border-radius: 3rem;
     text-transform: uppercase;
@@ -145,4 +145,9 @@ html {
     color: white;
     margin-top: 3rem;
     cursor: pointer;
+}
+
+.signup button:hover {
+    background-color: #050036;
+    color: white;
 }
