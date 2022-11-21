@@ -71,6 +71,13 @@ html {
     cursor: pointer;
 }
 
+.bkg button:hover {
+    background-color: white;
+    color: #392e9e;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
 .signup {
     width: 60rem;
     height: 100%;
@@ -150,4 +157,6 @@ html {
 .signup button:hover {
     background-color: #050036;
     color: white;
+    font-weight: bolder;
+    font-size: 1.5rem;
 }
