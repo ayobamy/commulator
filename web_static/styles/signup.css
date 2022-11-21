@@ -160,3 +160,7 @@ html {
     font-weight: bolder;
     font-size: 1.5rem;
 }
+
+.signup .login:hover {
+    background-color: #00a2ff;
+}
