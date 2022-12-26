@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login as auth_login
 from .forms import SignupForm, LoginForm
 
 
@@ -15,20 +15,23 @@ def signup(request):
         # authenticate the user and redirect to the home page
         username = form.cleaned_data['username']
         password = form.cleaned_data['password1']
-        user = authenticate(request, username=username, password=password)
+        confirm_password = form.cleaned_data['password2']
+        user = authenticate(request, username=username, password=password, confirm_password=confirm_password)
         if user is not None:
-            login(request, user)
+            auth_login(request, user)
             return redirect('base')
     return render(request, 'signup.html', {'form': form})
 
 def login(request):
-    form = LoginForm(request.POST or None)
-    if form.is_valid():
-        # authenticate the user and redirect to the home page
-        username = form.cleaned_data['username']
-        password = form.cleaned_data['password']
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request, user)
+            auth_login(request, user)
             return redirect('base')
-    return render(request, 'login.html', {'form': form})
+        else:
+            # Handle invalid login
+            pass
+    return render(request, 'login.html')
+

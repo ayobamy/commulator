@@ -12,7 +12,7 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
 
     def __init__(self, *args, **kwargs):
-        super(LoginForm, self).__init__(*args, **kwargs)
+        super(login_view, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs['placeholder'] = 'Username'
         self.fields['password'].widget.attrs['placeholder'] = 'Password'
         self.fields['password'].widget.attrs['autocomplete'] = 'off'

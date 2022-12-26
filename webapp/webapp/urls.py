@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path("", include("commulator.urls")),
+    path("", include("commulator.urls", namespace='commulator')),
     path('admin/', admin.site.urls),
 ]
 
