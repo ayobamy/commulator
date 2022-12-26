@@ -11,7 +11,7 @@
 </head>
 <body>
     {% block body %}
-    <form method="post" action="{% url 'login' %}" class="box">
+    <form method="post" action="{% url 'commulator:login' %}" class="box">
         {% csrf_token %}
         <div class="field">
           <label class="label">Username</label>
