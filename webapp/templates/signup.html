@@ -8,66 +8,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>{% block title %}SignUp{% endblock %}</title>
 </head>
 <body>
     {% block body %}
-      {% block content %}
       <form method="post" action="{% url 'commulator:signup' %}" class="box">
         {% csrf_token %}
         <div class="field">
           <label class="label">Email</label>
           <div class="control has-icons-left">
             {{ form.email }}
-            <span class="icon is-small is-left">
+            <!-- <span class="icon is-small is-left">
               <i class="fas fa-envelope"></i>
-            </span>
+            </span> -->
           </div>
         </div>
         <div class="field">
           <label class="label">Username</label>
           <div class="control has-icons-left">
             {{ form.username }}
-            <span class="icon is-small is-left">
+            <!-- <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
-            </span>
+            </span> -->
           </div>
         </div>
         <div class="field">
           <label class="label">Password</label>
           <div class="control has-icons-left">
             {{ form.password1 }}
-            <span class="icon is-small is-left">
+            <!-- <span class="icon is-small is-left">
               <i class="fas fa-lock"></i>
-            </span>
+            </span> -->
           </div>
         </div>
         <div class="field">
           <label class="label">Confirm Password</label>
           <div class="control has-icons-left">
             {{ form.password2 }}
-            <span class="icon is-small is-left">
+            <!-- <span class="icon is-small is-left">
               <i class="fas fa-lock"></i>
-            </span>
+            </span> -->
           </div>
         </div>
         <div class="field">
           <label class="label">First Name</label>
           <div class="control has-icons-left">
             {{ form.first_name }}
-            <span class="icon is-small is-left">
+            <!-- <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
-            </span>
+            </span> -->
           </div>
         </div>
         <div class="field">
           <label class="label">Last Name</label>
           <div class="control has-icons-left">
             {{ form.last_name }}
-            <span class="icon is-small is-left">
+            <!-- <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
-            </span>
+            </span> -->
           </div>
         </div>
         <div class="field">
@@ -76,7 +76,6 @@
           </div>
         </div>
       </form>
-      {% endblock %}
     {% endblock body %}
 </body>
 </html>

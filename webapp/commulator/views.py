@@ -14,7 +14,7 @@ def signup(request):
         form.save()
         # authenticate the user and redirect to the home page
         username = form.cleaned_data['username']
-        password = form.cleaned_data['password']
+        password = form.cleaned_data['password1']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
