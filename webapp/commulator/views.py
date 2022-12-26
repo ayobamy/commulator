@@ -1,17 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
 
 
 # Create your views here.
-from django.shortcuts import render, redirect
-
-translator = Translator(service_urls=[
-    'translate.google.com',
-    'translate.google.co.kr',
-])
-
 def base(request):
     return render(request, "base.html")
 
