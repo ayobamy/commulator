@@ -1,0 +1,258 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'></script>
+    <title>{% block title %}Commulator{% endblock %}</title>
+    {% block stylesheet %}
+
+    <style>
+        .hero {
+          background-color: rgb(0, 0, 0);
+          color: rgb(255, 255, 255);
+        }
+
+        .navbar-burger {
+            display: none;
+            color: #fff;
+        }
+
+        .navbar .buttons {
+            display: block;
+        }
+
+        .navbar-menu {
+            background-color: #000;
+        }
+
+        @media screen and (max-width: 768px) {
+          .navbar-burger {
+            display: block;
+          }
+
+          .navbar-menu {
+            display: none;
+            background-color: #000;
+          }
+        }
+
+        .is-active .navbar-menu {
+            display: block;
+        }
+
+        .navbar-item {
+            color: #fff;
+        }
+
+        .navbar-item:hover {
+            background-color: #000;
+            color: #000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .columns {
+            display: flex;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .footer {
+            background-color: rgb(26, 25, 25);
+            color:rgb(255, 255, 255);
+        }
+
+        .fa-2x {
+            color: white;
+        }
+
+        .carousel {
+            width: 100%;
+            height: auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1em;
+        }
+
+        .transparent-on-hover {
+            transition: all 0.3s ease;
+            opacity: 1;
+        }
+
+        .transparent-on-hover:hover {
+            opacity: 0.5;
+        }
+
+        .image-text {
+            display: none;
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .carousel-item:hover .image-text {
+            display: block;
+        }
+    </style>
+    {% endblock %} 
+</head>
+
+<body>
+    {% block body %}
+    <section class="hero is-medium">
+      <div class="hero-head">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+              <img src="{% static 'com-w.png' %}" alt="Logo">
+            </a>
+        
+            <a role="button" id="burger" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroB">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+        
+          <div id="navbarMenuHeroB" class="navbar-menu">
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <a class="navbar-item" href="{% url 'commulator:team' %}">Home</a>
+                <a class="navbar-item" href="{% url 'commulator:team' %}">Team</a>
+                <a class="navbar-item mr-3" href="">Dashboard</a>
+                <div class="buttons">
+                  <a class="button is-danger" href="{% url 'commulator:login' %}">Log in</a>
+                  <a class="button is-warning" href="{% url 'commulator:signup' %}">Sign up</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>        
+      </div>
+      <div id="carousel" class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img class="transparent-on-hover mt-4" src="https://user-images.githubusercontent.com/59466195/207965723-4a668d75-3e81-4170-a4a6-e17b743afef2.jpg" alt="Image">
+            <div class="image-text">...bridging communication gap</div>
+          </div>
+        </div>
+      </div>  
+      <div class="hero-body">
+        <div class="container">        
+          <div class="columns">
+              <div class="column">
+                <div class="slider is-auto-play">
+                  <!-- <button class="slider-nav-left">&lt;</button> -->
+                  <img class="slider-item" src="https://user-images.githubusercontent.com/59466195/207965767-3e6c3813-ce46-4a15-8a91-141587898ecb.jpg" alt="image 1">
+                  <img class="slider-item" src="https://user-images.githubusercontent.com/59466195/207965723-4a668d75-3e81-4170-a4a6-e17b743afef2.jpg" alt="image 2">
+                  <img class="slider-item" src="https://user-images.githubusercontent.com/59466195/206669728-a91ed2f0-32c5-4ad1-bd0c-460f6cc3da1c.jpg" alt="image 3">
+                  <!-- <button class="slider-nav-right">&gt;</button> -->
+                </div>
+              </div>
+
+            <div class="column">
+              <h2 class="title has-text-white">Communication is Key</h2>
+              <p>Communicate easily and better with anyone from any part of the world using your preferred/native laguage. Our app will handle the translation.<br />
+              <br />
+              Start your journey with us today!
+              </p>
+              <button class="button is-danger mt-5">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer has-text-centered is-dark">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-narrow">
+            <a href="#"><i class="fab fa-facebook fa-2x" style="color: white;"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x" style="color: white;"></i></a>
+            <a href="#"><i class="fab fa-instagram fa-2x" style="color: white;"></i></a>
+          </div>
+          <div class="column">
+            <p>&copy; Copyright 2022</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+
+    <script>
+        const burgerIcon = document.querySelector('#burger');
+        const navbarMenu = document.querySelector('#navbarMenuHeroB');
+
+        burgerIcon.addEventListener('click', () => {
+            navbarMenu.classList.toggle('is-active');
+        });
+
+        const slider = document.querySelector('.slider');
+        const images = document.querySelectorAll('.slider-item');
+        // const prevBtn = document.querySelector('.slider-nav-left');
+        // const nextBtn = document.querySelector('.slider-nav-right');
+
+        let currentIndex = 0;
+        let interval;
+
+        function reset() {
+          for (let i = 0; i < images.length; i++) {
+            images[i].style.display = 'none';
+          }
+        }
+
+        function startSlider() {
+          reset();
+          images[currentIndex].style.display = 'block';
+          interval = setInterval(nextSlide, 3000); // Change slide every 2 seconds
+        }
+
+        function prevSlide() {
+          reset();
+          currentIndex--;
+          if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+          }
+          images[currentIndex].style.display = 'block';
+        }
+
+        function nextSlide() {
+          reset();
+          currentIndex++;
+          if (currentIndex >= images.length) {
+            currentIndex = 0;
+          }
+          images[currentIndex].style.display = 'block';
+        }
+
+        // prevBtn.addEventListener('click', prevSlide);
+        // nextBtn.addEventListener('click', nextSlide);
+
+        startSlider();
+    </script>
+    {% endblock body %}
+</body>
+</html>
